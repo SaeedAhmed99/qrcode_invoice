@@ -1,0 +1,132 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+
+    <style>
+
+
+        table tbody tr td {
+            padding: 5px !important;
+            line-height: 1.35 !important;
+        }
+        th {
+            padding-top: 3px;
+            padding-bottom: 3px;
+        }
+        .center-me {
+            font-size: 15px;
+            margin: auto;
+            height: 10px;
+            max-width: 500px;
+            margin: 75px auto 40px auto;
+            display: flex;
+        }
+        .qr {
+            display: block;
+            width: 150px;
+            margin: auto;
+        }
+        @font-face {
+            src: url({% static 'fonts/Cairo-VariableFont_wght.ttf' %});
+            font-family: 'Cairo';};
+                    
+        .amm {
+            font-weight: 200;
+            font-size: 14px;
+            font-family: 'Cairo', sans-serif; 
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+            <table width="100%" border="1">
+                <tr style="background: rgba(217,225,242,1.0)">
+                    <th class="text-center" colspan="2" style="width: 25%;">Bill To</th>
+                </tr>
+                <tr>
+                    <th style="width: 20%;font-size: 12px;background: rgba(217,225,242,1.0)">Consumer Name</th>
+                    <th></th>
+                </tr>
+                <tr>
+                    <th style="width: 20%;font-size: 12px;background: rgba(217,225,242,1.0)">Company Name</th>
+                    <th></th>
+                </tr>
+                <tr>
+                    <th style="width: 20%;font-size: 12px;background: rgba(217,225,242,1.0)">Street Address</th>
+                    <th></th>
+                </tr>
+                <tr>
+                    <th style="width: 20%;font-size: 12px;background: rgba(217,225,242,1.0)">City State ZIp</th>
+                    <th></th>
+                </tr>
+                <tr>
+                    <th style="width: 20%;font-size: 12px;background: rgba(217,225,242,1.0)">Phone</th>
+                    <th></th>
+                </tr>
+                <tr>
+                    <th style="width: 20%;font-size: 12px;background: rgba(217,225,242,1.0)">Email Address</th>
+                    <th></th>
+                </tr>
+            </table>
+            <br>
+            <table width="100%" border="1px">
+                <tr style="background: rgba(217,225,242,1.0);">
+                    <th class="text-center">
+                        #
+                    </th>
+                    <th class="text-center" colspan="3">
+                        Product Description
+                    </th>
+                    <th class="text-center">
+                        Price
+                    </th>
+                    <th class="text-center">
+                        Quantity
+                    </th>
+                    <th class="text-center amm" pdf:language name="arabic">
+                        الكمية
+                    </th>
+                </tr>
+                <tbody>
+                <tr><td>1</td><td colspan="3">iPhone xs Plus</td><td>20000</td><td>1</td><td>20000</td></tr>
+                <tr><td>1</td><td colspan="3">iPhone xs Plus</td><td>20000</td><td>1</td><td>20000</td></tr>
+                <tr><td>1</td><td colspan="3">iPhone xs Plus</td><td>20000</td><td>1</td><td>20000</td></tr>
+                <tr><td>1</td><td colspan="3">iPhone xs Plus</td><td>20000</td><td>1</td><td>20000</td></tr>
+                <tr><td>1</td><td colspan="3">iPhone xs Plus</td><td>20000</td><td>1</td><td>20000</td></tr>
+                <tr><td>1</td><td colspan="3">iPhone xs Plus</td><td>20000</td><td>1</td><td>20000</td></tr>
+                <tr><td>1</td><td colspan="3">iPhone xs Plus</td><td>20000</td><td>1</td><td>20000</td></tr>
+                <tr><td>1</td><td colspan="3">iPhone xs Plus</td><td>20000</td><td>1</td><td>20000</td></tr>
+                <tr><td>1</td><td colspan="3">iPhone xs Plus</td><td>20000</td><td>1</td><td>20000</td></tr>
+                </tbody>
+                <tfoot>
+                <tr style="background: rgba(217,225,242,1.0);">
+                    <td>Tax</td>
+                    <td>7%</td>
+                    <td>Discount</td>
+                    <td>5%</td>
+                    <td colspan="2">Total Amount</td>
+                    <td colspan="1">5741</td>
+                </tr>
+                <tr style="background: rgba(217,225,242,1.0);">
+                    <td colspan="2">401.87</td>
+                    <td colspan="2">287.05</td>
+                    <td colspan="2">Final Amount</td>
+                    <td>5855.82</td>
+                </tr>
+                </tfoot>
+            </table>
+            <br>
+            <img  src="{{image.qr_code.url}}" class="qr" alt="">
+            
+            <a class='btn btn-primary' href='{% url 'report' %}'>conv to pdf</a>
+
+
+</body>
+</html>
